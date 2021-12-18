@@ -75,3 +75,11 @@ func BenchmarkEasyJsonBuffer_OptimizedConfig(b *testing.B) {
 		}
 	})
 }
+
+func BenchmarkLibp2pBuffer(b *testing.B) {
+	b.RunParallel(func(pb *testing.PB) {
+		for pb.Next() {
+			Libp2pBuf()
+		}
+	})
+}

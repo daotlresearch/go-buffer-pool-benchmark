@@ -9,7 +9,7 @@
 * [bpool](https://github.com/oxtoacart/bpool)
 * [bytebufferpool](https://github.com/valyala/bytebufferpool)
 * [easyjson](https://github.com/mailru/easyjson/blob/master/buffer/pool.go)
-
+* [libp2p/go-buffer-pool](https://github.com/libp2p/go-buffer-pool)
 
 #### Launch bench
 ```sh

@@ -16,6 +16,7 @@ import (
 	"syscall"
 	"time"
 
+	pool "github.com/libp2p/go-buffer-pool"
 	"github.com/oxtoacart/bpool"
 	"github.com/valyala/bytebufferpool"
 
@@ -187,6 +188,12 @@ func WorkWithEJBuf(b *buffer.EJBuffer) {
 	}
 }
 
+func WorkWithLibp2pBuf(b *pool.Buffer) {
+	for _, s := range str {
+		b.WriteString(s)
+	}
+}
+
 func GenericStackBuf() {
 	var buf bytes.Buffer
 	buf.Reset()
@@ -235,6 +242,13 @@ func BBpoolBuf() {
 func EasyJsonBuf() {
 	buf := buffer.EJBuffer{}
 	WorkWithEJBuf(&buf)
+	buf.Reset()
+	Done()
+}
+
+func Libp2pBuf() {
+	buf := pool.Buffer{}
+	WorkWithLibp2pBuf(&buf)
 	buf.Reset()
 	Done()
 }
